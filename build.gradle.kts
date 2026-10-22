@@ -5,11 +5,13 @@ plugins {
 
 repositories {
     mavenCentral()
-    maven("https://repo.papermc.io/repository/maven-public/")
+    maven(url="https://repo.papermc.io/repository/maven-public/")
+    maven(url="https://mvn.lib.co.nz/public")
 }
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:26.3.build.+")
+    implementation("me.libraryaddict.disguises:libsdisguises:26.9.26")
 }
 
 java {
@@ -23,6 +25,10 @@ tasks {
         // Your plugin's jar (or shadowJar if present) will be used automatically.
         minecraftVersion("26.3")
         jvmArgs("-Xms2G", "-Xmx2G", "-Dcom.mojang.eula.agree=true")
+
+        downloadPlugins {
+            github("libraryaddict", "LibsDisguises", "v26.9.26", "LibsDisguises-26.9.26-Github.jar")
+        }
     }
 
     processResources {

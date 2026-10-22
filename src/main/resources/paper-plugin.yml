@@ -7,3 +7,10 @@ api-version: '26.3'
 load: POSTWORLD
 
 authors: [ craftinators ]
+
+dependencies:
+  server:
+    LibsDisguises:
+      load: BEFORE
+      required: true
+      join-classpath: true
