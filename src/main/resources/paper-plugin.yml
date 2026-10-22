@@ -6,4 +6,4 @@ main: me.craftinators.dwarves.Dwarves
 api-version: '26.3'
 load: POSTWORLD
 
-authors: [ Craftinators ]
+authors: [ craftinators ]
