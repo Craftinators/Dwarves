@@ -6,11 +6,14 @@ plugins {
 repositories {
     mavenCentral()
     maven(url="https://repo.papermc.io/repository/maven-public/")
+    maven(url="https://repo.codemc.io/repository/maven-releases/")
+    maven(url="https://repo.codemc.io/repository/maven-snapshots/")
     maven(url="https://mvn.lib.co.nz/public")
 }
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:26.3.build.+")
+    compileOnly("com.github.retrooper:packetevents-spigot:2.14.0")
     implementation("me.libraryaddict.disguises:libsdisguises:26.9.26")
 }
 
@@ -27,6 +30,7 @@ tasks {
         jvmArgs("-Xms2G", "-Xmx2G", "-Dcom.mojang.eula.agree=true")
 
         downloadPlugins {
+            github("retrooper", "packetevents", "v2.14.0", "packetevents-spigot-2.14.0.jar")
             github("libraryaddict", "LibsDisguises", "v26.9.26", "LibsDisguises-26.9.26-Github.jar")
         }
     }
